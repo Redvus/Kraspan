@@ -1,0 +1,21 @@
+$primary: #000000; //Темно-синий
+$secondary: #de0028; //Красный
+$third: lighten($primary, 90%); //15% $primary
+$fourth: #fff;
+$five: #f2a07c; // 50% $secondary
+$six: #000000;
+$seven: #dfdfe8;
+$error: #ff9015;
+$success: #19d3c5;
+
+$temp: #64000f; //Красный
+
+$error: $third;
+$success: $fourth;
+
+$border_thin: 0.1rem;
+$border_normal: 0.3rem;
+$border_bold: 0.6rem;
+
+$base-duration: 0.2s;
+$base-timing: 0.3s;

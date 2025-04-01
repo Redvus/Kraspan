@@ -2,47 +2,6 @@
 =            Variable            =
 ================================*/
 
-$primary: #000000; //Темно-синий
-$secondary: #de0028; //Красный
-$third: lighten($primary, 90%); //15% $primary
-$fourth: #fff;
-$five: #f2a07c; // 50% $secondary
-$six: #000000;
-$seven: #dfdfe8;
-$error: #ff9015;
-$success: #19d3c5;
-
-$temp: #64000f; //Красный
-
-$error: $third;
-$success: $fourth;
-
-$border_thin: 0.1rem;
-$border_normal: 0.3rem;
-$border_bold: 0.6rem;
-
-$base-duration: 0.2s;
-$base-timing: 0.3s;
-
-/* Media
--------------------------------------------------- */
-$imac27: 2560px;
-$imac21: 1920px;
-$cinema: 1680px;
-$pad_g: 1080px;
-$pad_v: 820px;
-$mobile: 570px;
-
-$XXLarge: (media: "(min-width: #{$imac21})");
-$XLarge: (media: "(min-width: #{$cinema}) and (max-width: #{$imac21})");
-$Large: (media: "(min-width: #{$pad_g}) and (max-width: #{$cinema})");
-$Medium: (media: "(max-width: #{$pad_g})");
-$XSmall: (media: "(max-width: #{$pad_v})");
-$Small: (media: "(max-width: #{$mobile})");
-$HSmall: (media: "(max-height: 420px)");
-
-/* End of Media
--------------------------------------------------- */
 $padding: 1rem;
 $heightPart: 1vmax;
 $wrapperWidth: $padding * 75;
@@ -79,7 +38,7 @@ $headerLineHeight: calc(#{$padding} / 3);
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight});
 
 $headerLogoWidth: 18rem;
-$headerInfoWidth: 35%;
+$headerInfoWidth: calc(80% / 3);
 $headerMenuPadding: 5rem;
 $headingPartPadding: calc(#{$padding} * 4);
 
@@ -131,7 +90,6 @@ $sectionTopInfoHeight: 4rem;
 /* Mobile
 -------------------------------------------------- */
 $headerMobileTopHeight: calc(#{$padding} * 3);
-
 
 /*=====  End of Variable  ======*/
 
@@ -256,120 +214,6 @@ $headerMobileTopHeight: calc(#{$padding} * 3);
 
 /*============  End of Row Machine  =============*/
 
-/*=============================
-=            Fonts            =
-=============================*/
-
-@font-face {
-    font-family: "Montserrat Regular";
-    src: local("fonts/"),
-    url("fonts/Montserrat-Regular.woff2") format("woff2"),
-    url("fonts/Montserrat-Regular.woff") format("woff");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Montserrat Medium";
-    src: local("fonts/"),
-    url("fonts/Montserrat-Medium.woff2") format("woff2"),
-    url("fonts/Montserrat-Medium.woff") format("woff");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Montserrat Bold";
-    src: local("fonts/"),
-    url("fonts/Montserrat-Bold.woff2") format("woff2"),
-    url("fonts/Montserrat-Bold.woff") format("woff");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-}
-
-$fa-font-path: 'fonts/';
-
-//$primary-font: $font-stack-helvetica;
-// $primary-font: $font-stack-verdana;
-$primary-font: "Montserrat Regular";
-$heading-font: "Montserrat Bold";
-$heading-font-normal: "Montserrat Medium";
-$heading-font-light: "Montserrat Regular";
-
-$body-font-color: $primary;
-
-$body-font-size: 1rem !default;
-$body-font-weight: normal !default;
-$body-line-height: 1.4 !default;
-$heading-line-height: 1 !default;
-
-$heading-font-modular: 1vw !default;
-
-$bourbon: (
-        "modular-scale-base": $heading-font-modular,
-        "modular-scale-ratio": $major-third,
-);
-
-$font-size-base: $body-font-size !default;
-$font-size-large: $font-size-base + 0.2 !default; // ~18px
-$font-size-small: $font-size-base - 0.2 !default; // ~14px
-
-$font-size-h1: calc(#{$font-size-base} + 1.8rem) !default; //calc(1rem + 2vmax) !default; // ~3rem 48px modular-scale(6)
-$font-size-h2: calc(1rem + 0.9vmax) !default; // ~2.5rem 40px modular-scale(5)
-$font-size-h3: calc(#{$font-size-base} + 0.5rem) !default; // ~2rem 33px calc(1rem + 0.7vmax) !default
-$font-size-h4: calc(#{$font-size-base} + 0.2rem) !default; // ~1.728rem 28px
-$font-size-h5: calc(1rem + 0.10vmax) !default; // ~1.44rem 23px
-$font-size-h6: calc(1rem + 0.07vmax) !default; // ~1.2rem 19px
-
-%px {
-    font: {
-        family: $primary-font;
-        weight: $body-font-weight;
-        size: $font-size-base;
-    };
-    line-height: $body-line-height;
-    color: $body-font-color;
-    //text-indent: 1rem;
-
-    // @include grid-media($XXLarge) {
-    //     font-size: modular-scale(3);
-    // }
-
-    @include grid-media($XLarge) {
-        font-size: $font-size-base;
-    }
-
-    @include grid-media($Medium) {
-        font-size: $font-size-base;
-    }
-
-    @include grid-media($XSmall) {
-        font-size: $font-size-base;
-    }
-
-    @include grid-media($Small) {
-        font-size: $font-size-base;
-    }
-}
-
-%hx {
-    font: {
-        family: $heading-font;
-        weight: 400;
-    };
-    color: $primary;
-    line-height: $heading-line-height;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-/*=====  End of Fonts  ======*/
-
-
 /*==============================
 =            Layout            =
 ==============================*/
@@ -440,9 +284,9 @@ ul {
 
     li {
 
-        @include grid-media($XLarge) {
-            font-size: $font-size-base;
-        }
+        // @include grid-media($XLarge) {
+        //     font-size: $font-size-base;
+        // }
 
         @include grid-media($Medium) {
             font-size: $font-size-base;

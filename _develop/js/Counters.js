@@ -1,15 +1,19 @@
 class Counters {
 
-    counterLoad(counterID, counterNumEnd) {
-        let counts = setInterval(updated);
-        let upto = 0;
+    constructor(counterID, counterNumEnd) {
+        this.counterID = counterID;
+        this.counterNumEnd = counterNumEnd;
+        this.counterLoad();
+    }
 
-        function updated() {
-            let count = document.getElementById(counterID);
-            count.innerHTML = ++upto;
-            if (upto === counterNumEnd) {
-                clearInterval(counts);
+    counterLoad() {
+        this.upto = 0;
+        this.counts = setInterval(() => {
+            this.count = document.getElementById(this.counterID);
+            this.count.innerHTML = ++this.upto;
+            if (this.upto === this.counterNumEnd) {
+                clearInterval(this.counts);
             }
-        }
+        });
     }
 }

@@ -17,8 +17,10 @@ var path = {
         npm: 'node_modules/'
     },
     dest: {
-        css: '_build/',
-        js: '_build/js/'
+        css: 'root/html/assets/',
+        cssBuild: '_build/css/',
+        js: 'root/html/assets/js/',
+        jsBuild: '_build/js/'
     },
     watch: {
         scss: '_develop/scss/',
@@ -44,7 +46,8 @@ gulp.task('main-scss', function(){
             return mapFilePath.replace('.scss', '.map');
         }
     }))
-    .pipe(gulp.dest(path.dest.css));
+    .pipe(gulp.dest(path.dest.css))
+    .pipe(gulp.dest(path.dest.cssBuild));
     // .pipe(browserSync.reload({
     //     stream: true
     // }));
@@ -71,19 +74,20 @@ gulp.task('login-scss', function(){
 
 gulp.task('main-js', function(){
     return gulp.src([
-        // path.src.js + 'nav.js',
-        path.src.js + 'Counters.js',
+        // path.src.js + 'Counters.js',
         path.src.js + 'smoothScroll.js',
+        path.src.js + 'Modal.js',
         path.src.js + 'nav.js',
         path.src.js + 'tabs.js',
         path.src.js + 'slider.js',
-        path.src.js + 'Modal.js',
+        path.src.js + 'MapSelect.js',
         path.src.js + 'main.js'
     ])
     .pipe(concat('main.js'))
     .pipe(terser())
     .pipe(rename({suffix: "-min"}))
-    .pipe(gulp.dest(path.dest.js));
+    .pipe(gulp.dest(path.dest.js))
+    .pipe(gulp.dest(path.dest.jsBuild));
 });
 
 gulp.task('contact-js', function () {
@@ -153,7 +157,10 @@ gulp.task('watch', function() {
         path.watch.js + 'smoothScroll.js',
         path.watch.js + 'slider.js',
         path.watch.js + 'Modal.js',
-        path.watch.js + 'Counters.js'], gulp.series('main-js'));
+        path.watch.js + 'MapSelect.js',
+        // path.watch.js + 'MapSelectAdress.js',
+        // path.watch.js + 'Counters.js'
+    ], gulp.series('main-js'));
     gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
     gulp.watch(path.watch.js + 'preloader.js', gulp.series('preloader-js'));
     // gulp.watch(path.watch.js + 'jgrowl.js', gulp.series('jgrowl-js'));

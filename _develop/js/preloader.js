@@ -1,7 +1,8 @@
 'use strict';
 
 function preloaderBeginLoad() {
-	const wrapperBegin = document.querySelector('.wrapper-begin'),
+	const
+		wrapperBegin = document.querySelector('.wrapper-begin'),
 		countersBlock = document.querySelector('.section-top__info_counters'),
 		bodyBlock = document.body
 	;
@@ -12,7 +13,9 @@ function preloaderBeginLoad() {
 				onComplete: () => {
 					bodyBlock.removeChild(wrapperBegin);
 					if (countersBlock) {
-						countersFront();
+						counterLoad('counterFasad', 180);
+						counterLoad('counterObjects', 150);
+						counterLoad('counterDistrict', 9);
 					}
 				}
 			});
@@ -25,10 +28,20 @@ function preloaderBeginLoad() {
 				})
 			;
 		}, false);
-
 	}
 
 	preloaderBeginAnim();
+}
+
+function counterLoad(counterID, counterNumEnd) {
+	let upto = 0;
+	const counts = setInterval(() => {
+		const count = document.getElementById(counterID);
+		count.innerHTML = ++upto;
+		if (upto === counterNumEnd) {
+			clearInterval(counts);
+		}
+	});
 }
 
 function initMain() {

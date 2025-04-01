@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/root/core/packages/core/modContext/a6cffbdaced1141d0a5b8c1fed7c399d/3/min/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/root/html/krasult/min/lib" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

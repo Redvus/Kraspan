@@ -76,13 +76,43 @@ $footer-grid: (
             }
 
             &--left {
-                width: calc(((50% / 2) - (#{$padding} * 3)));
-                padding: calc(#{$padding} * 3) calc(#{$padding} * 3) 0 0 ;
+                width: calc((30% - (#{$padding} * 5)));
+                padding: calc(#{$padding} * 3) calc(#{$padding} * 5) 0 0 ;
+
+                picture {
+                    width: 60%;
+                }
             }
 
             &--right {
                 width: calc(((50% / 2) - (#{$padding} * 3)));
                 padding: calc(#{$padding} * 3) 0 0 calc(#{$padding} * 3);
+            }
+
+            &--wide {
+                width: 70%;
+                padding: calc(#{$padding} * 3) 0 0;
+                justify-content: flex-end;
+
+                #kraspanPovMapCity {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 100;
+                    user-select: none;
+                }
+            }
+
+            &_description {
+                display: block;
+                position: relative;
+                font-family: $primary-font !important;
+                font-size: $font-size-small !important;
+                text-align: right !important;
+                margin-top: 1rem;
             }
         }
 
@@ -119,6 +149,27 @@ $footer-grid: (
                     a, i {
                         color: $secondary;
                     }
+                }
+            }
+        }
+
+        &_map {
+
+            &_svg {
+                stroke-width: 0.07rem;
+                stroke: $fourth;
+                //cursor: pointer;
+
+                &--hidden {
+                    opacity: 0.5;
+                }
+            }
+
+            &_text {
+                fill: $primary;
+
+                tspan {
+                    font-family: $heading-font-light;
                 }
             }
         }
@@ -481,6 +532,43 @@ $footer-grid: (
             }
         }
     }
+}
+
+#footerMap {
+
+    &Samara {
+        fill: rgb(230, 86, 69);
+    }
+
+    &Ufa {
+        // fill: rgb(184, 120, 196);
+        fill: lighten($primary, 50%);
+    }
+
+    &Kazan {
+        fill: #38aa6e;
+    }
+
+    &Orenburg {
+        fill: #ffdc00;
+    }
+
+    &Ulyanovsk {
+        fill: #c964a5;
+    }
+
+    &Saratov {
+        fill: #fbb03b;
+    }
+
+    &Penza {
+        fill: #4b9bd0;
+    }
+
+    &Saransk {
+        fill: #9996ff;
+    }
+
 }
 
 /*=====  End of Footer  ======*/

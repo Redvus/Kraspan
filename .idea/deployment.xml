@@ -6,7 +6,7 @@
       <paths name="Kraspan">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$/_build/" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$/_build/css" web="/" />
             <mapping deploy="/js" local="$PROJECT_DIR$/_build/js" web="/" />
           </mappings>
         </serverdata>
