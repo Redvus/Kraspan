@@ -44,7 +44,7 @@ class MapSelectAdress {
 					this.mapSelectDistrict[i] != this.mapSelectKazan ||
 					this.mapSelectDistrict[i] != this.mapSelectSaransk) {
 					this.footerAdress.innerHTML = `
-						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(846)&nbsp;233-52-02</a></li>
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
 						<li>г.&nbsp;Самара, ул.&nbsp;Парижской Коммуны, д.&nbsp;3-А, оф.&nbsp;49</li>
 					`;
@@ -56,14 +56,14 @@ class MapSelectAdress {
 					this.mapSelectDistrict[i] != this.mapSelectKazan ||
 					this.mapSelectDistrict[i] != this.mapSelectSaransk) {
 					this.footerAdress.innerHTML = `
-						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(846)&nbsp;233-52-02</a></li>
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
 						<li>г.&nbsp;Самара, ул.&nbsp;Парижской Коммуны, д.&nbsp;3-А, оф.&nbsp;49</li>
 					`;
 				} else if (this.mapSelectDistrict[i] == this.mapSelectPenza ||
 					this.mapSelectDistrict[i] != this.mapSelectKazan) {
 					this.footerAdress.innerHTML = `
-						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(846)&nbsp;233-52-02</a></li>
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
 						<li>г.&nbsp;Самара, ул.&nbsp;Парижской Коммуны, д.&nbsp;3-А, оф.&nbsp;49</li>
 					`;

@@ -1,16 +1,14 @@
-var gulp = require('gulp'),
-    watch = require("gulp-watch"),
+const gulp = require('gulp'),
     prefixer = require("gulp-autoprefixer"),
     terser = require('gulp-terser'),
     concat = require("gulp-concat"),
     sass = require('gulp-sass')(require('sass')),
-    // sass = require('sass'),
     cleanCSS = require("gulp-clean-css"),
     sourcemaps = require("gulp-sourcemaps"),
     rename = require("gulp-rename"),
     rimraf = require("gulp-rimraf");
 
-var path = {
+const path = {
     src: {
         scss: '_develop/scss/',
         js: '_develop/js/',
@@ -30,51 +28,43 @@ var path = {
 
 /*----------  SCSS  ----------*/
 
-gulp.task('main-scss', function(){
+function mainScss() {
     return gulp.src(path.src.scss + 'main.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(prefixer({
-        overrideBrowserslist: ['last 4 versions'],
-        cascade: false
-    }))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(sourcemaps.write('.', {
-        addComment: true,
-        // includeContent: false,
-        mapFile: function(mapFilePath) {
-            return mapFilePath.replace('.scss', '.map');
-        }
-    }))
-    .pipe(gulp.dest(path.dest.css))
-    .pipe(gulp.dest(path.dest.cssBuild));
-    // .pipe(browserSync.reload({
-    //     stream: true
-    // }));
-});
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(prefixer({
+            overrideBrowserslist: ['last 4 versions'],
+            cascade: false
+        }))
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        .pipe(sourcemaps.write('.', {
+            addComment: true,
+            mapFile: function (mapFilePath) {
+                return mapFilePath.replace('.scss', '.map');
+            }
+        }))
+        .pipe(gulp.dest(path.dest.css))
+        .pipe(gulp.dest(path.dest.cssBuild));
+}
 
-gulp.task('login-scss', function(){
+function loginScss() {
     return gulp.src(path.src.scss + 'login.scss')
-    .pipe(sass())
-    .pipe(prefixer({
-        overrideBrowserslist: ['last 4 versions'],
-        cascade: false
-    }))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(rename({
-        suffix: "-min"
-    }))
-    .pipe(gulp.dest(path.dest.css));
-    // .pipe(browserSync.reload({
-    //     stream: true
-    // }));
-});
+        .pipe(sass())
+        .pipe(prefixer({
+            overrideBrowserslist: ['last 4 versions'],
+            cascade: false
+        }))
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        .pipe(rename({
+            suffix: "-min"
+        }))
+        .pipe(gulp.dest(path.dest.css));
+}
 
 /*----------  JS  ----------*/
 
-gulp.task('main-js', function(){
+function mainJs() {
     return gulp.src([
-        // path.src.js + 'Counters.js',
         path.src.js + 'smoothScroll.js',
         path.src.js + 'Modal.js',
         path.src.js + 'nav.js',
@@ -83,37 +73,26 @@ gulp.task('main-js', function(){
         path.src.js + 'MapSelect.js',
         path.src.js + 'main.js'
     ])
-    .pipe(concat('main.js'))
-    .pipe(terser())
-    .pipe(rename({suffix: "-min"}))
-    .pipe(gulp.dest(path.dest.js))
-    .pipe(gulp.dest(path.dest.jsBuild));
-});
+        .pipe(concat('main.js'))
+        .pipe(terser())
+        .pipe(rename({ suffix: "-min" }))
+        .pipe(gulp.dest(path.dest.js))
+        .pipe(gulp.dest(path.dest.jsBuild));
+}
 
-gulp.task('contact-js', function () {
+function contactJs() {
     return gulp.src([
-        // path.src.js + 'nav.js',
         path.src.js + 'classie.js',
         path.src.js + 'input.js',
         path.src.js + 'contact.js'
     ])
-    .pipe(concat('contact.js'))
-    .pipe(terser())
-    .pipe(rename({ suffix: "-min" }))
-    .pipe(gulp.dest(path.dest.js));
-});
+        .pipe(concat('contact.js'))
+        .pipe(terser())
+        .pipe(rename({ suffix: "-min" }))
+        .pipe(gulp.dest(path.dest.js));
+}
 
-// gulp.task('jgrowl-js', function(){
-//     return gulp.src([
-//         path.src.js + 'jgrowl.js'
-//     ])
-//     .pipe(concat('jgrowl.js'))
-//     .pipe(terser())
-//     .pipe(rename({suffix: "-min"}))
-//     .pipe(gulp.dest(path.dest.ajaxLib));
-// });
-
-gulp.task('vendor-js', function(){
+function vendorJs() {
     return gulp.src([
         path.src.npm + 'gsap/dist/' + 'gsap.js',
         path.src.npm + 'gsap/dist/' + 'ScrollToPlugin.js',
@@ -121,35 +100,30 @@ gulp.task('vendor-js', function(){
         path.src.npm + 'imagesloaded/' + 'imagesloaded.pkgd.js',
         path.src.npm + 'locomotive-scroll/dist/' + 'locomotive-scroll.js',
         path.src.js + 'masterslider.js',
-        // path.src.npm + 'plyr/dist/' + 'plyr.js',
-        // path.src.js + 'jquery.requestAnimationFrame.js',
-        // path.src.js + 'jquery.mousewheel.js',
-        // path.src.js + 'ilightbox.packed.js',
-        // path.src.npm + 'magnific-popup/dist/' + 'jquery.magnific-popup.js',
         path.src.js + 'vendor.js'
     ])
-    .pipe(concat('vendor.js'))
-    .pipe(terser())
-    .pipe(rename({suffix: "-min"}))
-    .pipe(gulp.dest(path.dest.js));
-});
+        .pipe(concat('vendor.js'))
+        .pipe(terser())
+        .pipe(rename({ suffix: "-min" }))
+        .pipe(gulp.dest(path.dest.js));
+}
 
-gulp.task('preloader-js', function() {
+function preloaderJs() {
     return gulp.src([
         path.src.js + 'preloader.js'
     ])
-    .pipe(concat('preloader.js'))
-    .pipe(terser())
-    .pipe(rename({suffix: "-min"}))
-    .pipe(gulp.dest(path.dest.js));
-});
+        .pipe(concat('preloader.js'))
+        .pipe(terser())
+        .pipe(rename({ suffix: "-min" }))
+        .pipe(gulp.dest(path.dest.js));
+}
 
 /*----------  Watch  ----------*/
 
-gulp.task('watch', function() {
-    gulp.watch(path.watch.scss + '*.scss', gulp.series('main-scss'));
-    gulp.watch(path.watch.scss + 'login.scss', gulp.series('login-scss'));
-    gulp.watch(path.watch.js + 'vendor.js', gulp.series('vendor-js'));
+function watchFiles() {
+    gulp.watch(path.watch.scss + '*.scss', gulp.series(mainScss));
+    gulp.watch(path.watch.scss + 'login.scss', gulp.series(loginScss));
+    gulp.watch(path.watch.js + 'vendor.js', gulp.series(vendorJs));
     gulp.watch([
         path.watch.js + 'main.js',
         path.watch.js + 'nav.js',
@@ -158,14 +132,21 @@ gulp.task('watch', function() {
         path.watch.js + 'slider.js',
         path.watch.js + 'Modal.js',
         path.watch.js + 'MapSelect.js',
-        // path.watch.js + 'MapSelectAdress.js',
-        // path.watch.js + 'Counters.js'
-    ], gulp.series('main-js'));
-    gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
-    gulp.watch(path.watch.js + 'preloader.js', gulp.series('preloader-js'));
-    // gulp.watch(path.watch.js + 'jgrowl.js', gulp.series('jgrowl-js'));
+    ], gulp.series(mainJs));
+    gulp.watch(path.watch.js + 'contact.js', gulp.series(contactJs));
+    gulp.watch(path.watch.js + 'preloader.js', gulp.series(preloaderJs));
+}
 
-    // gulp.watch(path.dest.css + '/js/**/*.js', browserSync.reload);
-});
+exports['main-scss'] = mainScss;
+exports['login-scss'] = loginScss;
+exports['main-js'] = mainJs;
+exports['contact-js'] = contactJs;
+exports['vendor-js'] = vendorJs;
+exports['preloader-js'] = preloaderJs;
+exports.watch = watchFiles;
 
-// gulp.task("default", ["main-scss", "main-js", "watch"]);
+// Default task
+exports.default = gulp.series(
+    gulp.parallel(mainScss, loginScss, mainJs, contactJs, vendorJs, preloaderJs),
+    watchFiles
+);

@@ -76,11 +76,11 @@ $footer-grid: (
             }
 
             &--left {
-                width: calc((30% - (#{$padding} * 5)));
+                width: calc((35% - (#{$padding} * 5)));
                 padding: calc(#{$padding} * 3) calc(#{$padding} * 5) 0 0 ;
 
                 picture {
-                    width: 60%;
+                    width: 30%;
                 }
             }
 
@@ -90,7 +90,7 @@ $footer-grid: (
             }
 
             &--wide {
-                width: 70%;
+                width: 65%;
                 padding: calc(#{$padding} * 3) 0 0;
                 justify-content: flex-end;
 
@@ -546,7 +546,21 @@ $footer-grid: (
     }
 
     &Kazan {
-        fill: #38aa6e;
+        fill: transparent;
+
+        &Left {
+            fill: #38aa6e;
+            stroke: none;
+        }
+
+        &Right {
+            fill: #388d60;
+            stroke: none;
+        }
+
+        // &Back {
+        //     fill: transparent;
+        // }
     }
 
     &Orenburg {

@@ -12,6 +12,8 @@ class MapSelect {
 		this.mapSelectSamara = document.getElementById('footerMapSamara');
 		this.mapSelectPenza = document.getElementById('footerMapPenza');
 		this.mapSelectKazan = document.getElementById('footerMapKazan');
+		this.mapSelectKazanLeft = document.getElementById('footerMapKazanLeft');
+		this.mapSelectKazanRight = document.getElementById('footerMapKazanRight');
 		this.mapSelectUfa = document.getElementById('footerMapUfa');
 		this.mapSelectSaransk = document.getElementById('footerMapSaransk');
 
@@ -50,6 +52,10 @@ class MapSelect {
 		this.mapSelectCitySaransk = document.getElementById('citySaransk');
 		this.mapSelectCitySaransk.style.userSelect = 'none';
 		this.mapSelectCitySaransk.style.pointerEvents = 'none';
+
+		this.mapSelectCityNabChelny = document.getElementById('cityNabChelny');
+		this.mapSelectCityNabChelny.style.userSelect = 'none';
+		this.mapSelectCityNabChelny.style.pointerEvents = 'none';
 	}
 
 	initSelect() {
@@ -88,7 +94,11 @@ class MapSelect {
 					this.footerAdress.innerHTML = `
 						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:89871750001">8&nbsp;(987)&nbsp;175-00-01</a></li>
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:aigul.archihub@gmail.com">aigul.archihub@gmail.com</a></li>
-						<li>Республика&nbsp;Татарстан<br>г.&nbsp;Казань<br>ООО&nbsp;"АРХИХАБ"<br>ул.&nbsp;Николая&nbsp;Столбова<br>дом&nbsp;1/3,&nbsp;офис&nbsp;1014</li>
+						<li>Республика&nbsp;Татарстан&nbsp;,&nbsp;г.&nbsp;Казань<br>ООО&nbsp;"АРХИХАБ"<br>ул.&nbsp;Николая&nbsp;Столбова<br>дом&nbsp;1/3,&nbsp;офис&nbsp;1014</li><br>
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(919)&nbsp;630-15-15</a></li>
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(927)&nbsp;472-08-50</a></li>
+						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:Progressauto@yandex.ru">Progressauto@yandex.ru</a></li>
+						<li>ООО «Прогресс-АВТО», Республика&nbsp;Татарстан, г.&nbsp;Нижнекамск<br>ул.&nbsp;Ш.&nbsp;Усманова, д.&nbsp;70, кв.&nbsp;383</li>
 					`;
 
 				} else if (this.mapSelectDistrict[i] == this.mapSelectUfa) {
@@ -98,7 +108,7 @@ class MapSelect {
 					this.mapSelectDistrict[i] != this.mapSelectKazan ||
 					this.mapSelectDistrict[i] != this.mapSelectSaransk) {
 					this.footerAdress.innerHTML = `
-						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(846)&nbsp;233-52-02</a></li>
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
 						<li>г.&nbsp;Самара, ул.&nbsp;5&nbsp;просека,&nbsp;д.&nbsp;95,&nbsp;оф.&nbsp;114</li>
 					`;
@@ -110,7 +120,7 @@ class MapSelect {
 					this.mapSelectDistrict[i] != this.mapSelectKazan ||
 					this.mapSelectDistrict[i] != this.mapSelectSaransk) {
 					this.footerAdress.innerHTML = `
-						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(846)&nbsp;233-52-02</a></li>
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
 						<li>г.&nbsp;Самара, ул.&nbsp;5&nbsp;просека,&nbsp;д.&nbsp;95,&nbsp;оф.&nbsp;114</li>
 					`;
@@ -118,7 +128,7 @@ class MapSelect {
 					this.mapSelectDistrict[i] != this.mapSelectKazan ||
 					this.mapSelectDistrict[i] == this.mapSelectSaransk) {
 					this.footerAdress.innerHTML = `
-						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(846)&nbsp;233-52-02</a></li>
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
 						<li>г.&nbsp;Самара, ул.&nbsp;5&nbsp;просека,&nbsp;д.&nbsp;95,&nbsp;оф.&nbsp;114</li>
 					`;
