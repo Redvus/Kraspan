@@ -127,7 +127,7 @@
 			font-size: $font-size-small;
 
 			&--left {
-				width: 20%;
+				width: $headerLeftPartWidth;
 				// padding-left: $headingPartPadding;
 
 				.header__top_adress--left {

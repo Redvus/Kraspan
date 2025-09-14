@@ -56,6 +56,10 @@ class MapSelect {
 		this.mapSelectCityNabChelny = document.getElementById('cityNabChelny');
 		this.mapSelectCityNabChelny.style.userSelect = 'none';
 		this.mapSelectCityNabChelny.style.pointerEvents = 'none';
+
+		this.mapSelectKazanAll = document.getElementById('footerMapKazanAll');
+		this.mapSelectKazanAll.style.userSelect = 'none';
+		this.mapSelectKazanAll.style.pointerEvents = 'none';
 	}
 
 	initSelect() {
@@ -90,13 +94,17 @@ class MapSelect {
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:kraspenza@yandex.ru">kraspenza@yandex.ru</a></li>
 						<li>Республика&nbsp;Мордовия<br>Пензенская область,&nbsp;г.&nbsp;Пенза<br>ООО&nbsp;"ТК&nbsp;Френк-Пенза"<br>ул.&nbsp;Котранского,&nbsp;49</li>
 					`;
-				} else if (this.mapSelectDistrict[i] == this.mapSelectKazan) {
+				} else if (this.mapSelectDistrict[i] == this.mapSelectKazanLeft) {
 					this.footerAdress.innerHTML = `
 						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:89871750001">8&nbsp;(987)&nbsp;175-00-01</a></li>
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:aigul.archihub@gmail.com">aigul.archihub@gmail.com</a></li>
-						<li>Республика&nbsp;Татарстан&nbsp;,&nbsp;г.&nbsp;Казань<br>ООО&nbsp;"АРХИХАБ"<br>ул.&nbsp;Николая&nbsp;Столбова<br>дом&nbsp;1/3,&nbsp;офис&nbsp;1014</li><br>
-						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(919)&nbsp;630-15-15</a></li>
-						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(927)&nbsp;472-08-50</a></li>
+						<li>Республика&nbsp;Татарстан&nbsp;,&nbsp;г.&nbsp;Казань<br>ООО&nbsp;"АРХИХАБ"<br>ул.&nbsp;Николая&nbsp;Столбова<br>дом&nbsp;1/3,&nbsp;офис&nbsp;1014</li>
+					`;
+
+				} else if (this.mapSelectDistrict[i] == this.mapSelectKazanRight) {
+					this.footerAdress.innerHTML = `
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:89196301515">8&nbsp;(919)&nbsp;630-15-15</a></li>
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:89274720850">8&nbsp;(927)&nbsp;472-08-50</a></li>
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:Progressauto@yandex.ru">Progressauto@yandex.ru</a></li>
 						<li>ООО «Прогресс-АВТО», Республика&nbsp;Татарстан, г.&nbsp;Нижнекамск<br>ул.&nbsp;Ш.&nbsp;Усманова, д.&nbsp;70, кв.&nbsp;383</li>
 					`;
@@ -117,7 +125,8 @@ class MapSelect {
 
 			this.mapSelectDistrict[i].addEventListener('mouseleave', () => {
 				if (this.mapSelectDistrict[i] != this.mapSelectPenza ||
-					this.mapSelectDistrict[i] != this.mapSelectKazan ||
+					this.mapSelectDistrict[i] != this.mapSelectKazanLeft ||
+					this.mapSelectDistrict[i] != this.mapSelectKazanRight ||
 					this.mapSelectDistrict[i] != this.mapSelectSaransk) {
 					this.footerAdress.innerHTML = `
 						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(846)&nbsp;233-52-02</a></li>
@@ -125,7 +134,8 @@ class MapSelect {
 						<li>г.&nbsp;Самара, ул.&nbsp;5&nbsp;просека,&nbsp;д.&nbsp;95,&nbsp;оф.&nbsp;114</li>
 					`;
 				} else if (this.mapSelectDistrict[i] == this.mapSelectPenza ||
-					this.mapSelectDistrict[i] != this.mapSelectKazan ||
+					this.mapSelectDistrict[i] != this.mapSelectKazanLeft ||
+					this.mapSelectDistrict[i] != this.mapSelectKazanRight ||
 					this.mapSelectDistrict[i] == this.mapSelectSaransk) {
 					this.footerAdress.innerHTML = `
 						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(846)&nbsp;233-52-02</a></li>

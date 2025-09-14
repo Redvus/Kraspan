@@ -38,7 +38,8 @@ $headerLineHeight: calc(#{$padding} / 3);
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight});
 
 $headerLogoWidth: 18rem;
-$headerInfoWidth: calc(80% / 3);
+$headerLeftPartWidth: 18%;
+$headerInfoWidth: calc((100% - #{$headerLeftPartWidth}) / 4);
 $headerMenuPadding: 5rem;
 $headingPartPadding: calc(#{$padding} * 4);
 
